@@ -1,0 +1,14 @@
+D:\PTPMQL\console_readline\bin\Debug\net7.0\console_readline.exe
+D:\PTPMQL\console_readline\bin\Debug\net7.0\console_readline.deps.json
+D:\PTPMQL\console_readline\bin\Debug\net7.0\console_readline.runtimeconfig.json
+D:\PTPMQL\console_readline\bin\Debug\net7.0\console_readline.dll
+D:\PTPMQL\console_readline\bin\Debug\net7.0\console_readline.pdb
+D:\PTPMQL\console_readline\obj\Debug\net7.0\console_readline.GeneratedMSBuildEditorConfig.editorconfig
+D:\PTPMQL\console_readline\obj\Debug\net7.0\console_readline.AssemblyInfoInputs.cache
+D:\PTPMQL\console_readline\obj\Debug\net7.0\console_readline.AssemblyInfo.cs
+D:\PTPMQL\console_readline\obj\Debug\net7.0\console_readline.csproj.CoreCompileInputs.cache
+D:\PTPMQL\console_readline\obj\Debug\net7.0\console_readline.dll
+D:\PTPMQL\console_readline\obj\Debug\net7.0\refint\console_readline.dll
+D:\PTPMQL\console_readline\obj\Debug\net7.0\console_readline.pdb
+D:\PTPMQL\console_readline\obj\Debug\net7.0\console_readline.genruntimeconfig.cache
+D:\PTPMQL\console_readline\obj\Debug\net7.0\ref\console_readline.dll
