@@ -1,0 +1,14 @@
+D:\PTPMQL\obj\Debug\net7.0\PTPMQL.GeneratedMSBuildEditorConfig.editorconfig
+D:\PTPMQL\obj\Debug\net7.0\PTPMQL.AssemblyInfoInputs.cache
+D:\PTPMQL\obj\Debug\net7.0\PTPMQL.AssemblyInfo.cs
+D:\PTPMQL\obj\Debug\net7.0\PTPMQL.csproj.CoreCompileInputs.cache
+D:\PTPMQL\bin\Debug\net7.0\PTPMQL.exe
+D:\PTPMQL\bin\Debug\net7.0\PTPMQL.deps.json
+D:\PTPMQL\bin\Debug\net7.0\PTPMQL.runtimeconfig.json
+D:\PTPMQL\bin\Debug\net7.0\PTPMQL.dll
+D:\PTPMQL\bin\Debug\net7.0\PTPMQL.pdb
+D:\PTPMQL\obj\Debug\net7.0\PTPMQL.dll
+D:\PTPMQL\obj\Debug\net7.0\refint\PTPMQL.dll
+D:\PTPMQL\obj\Debug\net7.0\PTPMQL.pdb
+D:\PTPMQL\obj\Debug\net7.0\PTPMQL.genruntimeconfig.cache
+D:\PTPMQL\obj\Debug\net7.0\ref\PTPMQL.dll
