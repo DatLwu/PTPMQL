@@ -1,57 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-/* Style the element with the id "myHeader" */
-#myHeader {
-  background-color: lightblue;
-  color: black;
-  padding: 40px;
-  text-align: center;
-}
-#myCity {
-	background-color:tomato;
-    color: green;
-    padding: 10px;
-}    
-
-/* Style all elements with the class name "city" */
-.city {
-  background-color: tomato;
-  color: white;
-  padding: 10px;
-} 
-</style>
-</head>
 <body>
 <h1>Lưu Tiến Đạt - 2021050174</h1>
-<h2>Difference Between Class and ID</h2>
-<p>A class name can be used by multiple HTML elements, while an id name must only be used by one HTML element within the page:</p>
+<h2>Iframe - Target for a Link</h2>
 
-<!-- An element with a unique id -->
-<h1 id="myHeader">My Cities</h1>
-<button onclick="displayResult()">Change text</button>
+<iframe src="demo_iframe.htm" name="iframe_a" height="300px" width="100%" title="Iframe Example"></iframe>
 
-<script>
-function displayResult() {
-  document.getElementById("myHeader").innerHTML = "Welcome to my city!";
-}
-</script>
+<p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
 
-<p><a href="#myCity">Jump to Ha Noi</a></p>
-
-<!-- Multiple elements with same class -->
-<h2 class="city">London</h2>
-<p>London is the capital of England.</p>
-
-<h2 class="city">Paris</h2>
-<p>Paris is the capital of France.</p>
-
-<h2 class="city">Tokyo</h2>
-<p>Tokyo is the capital of Japan.</p>
-
-<h2 id="myCity">Ha Noi</h2>
-<p>Ha Noi is the capital of Viet Nam.</p>
+<p>When the target attribute of a link matches the name of an iframe, the link will open in the iframe.</p>
 
 </body>
 </html>
