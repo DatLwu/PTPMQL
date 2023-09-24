@@ -12,10 +12,8 @@ namespace newApp.models{
             
         }
         public void Xuat(){
-            System.Console.Write(PersonID + "-" + FullName);
+            System.Console.WriteLine(PersonID + "-" + FullName);
         }
-
-        
     }
         
     

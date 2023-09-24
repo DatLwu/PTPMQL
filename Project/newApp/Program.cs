@@ -1,6 +1,9 @@
 ﻿using newApp.models;
-Employee emp = new Employee();
-emp.Nhap();
-emp.Xuat();
+
+Fruit2 fr = new Fruit2();
+fr.NhapTT();
+fr.XuatTT();
+
+
 
 
