@@ -1,19 +1,12 @@
-﻿using newApp.models;
-
-int n;
-System.Console.Write("n = ");
-n = Convert.ToInt16(Console.ReadLine());
-
-int[] intArr = new int[n];
-
-
-for (int i = 0; i < intArr.Length; i++)
+﻿using System.Collections;
+using newApp.models;
+ArrayList psList = new ArrayList();
+for(int i = 0; i < 2 ; i++)
 {
-    intArr[0] = 2;
-    intArr[i] = i*2;
-    
-
+    Person ps = new Person();
+    ps.Nhap();
+    psList.Add(ps);
 }
-for (int i = 0; i < intArr.Length; i++){
-    System.Console.WriteLine("Mang[" + i + "] = " + intArr[i]);}
-
+foreach(Person p in psList)    {
+    System.Console.WriteLine(p.PersonID + " - " + p.FullName);
+}
