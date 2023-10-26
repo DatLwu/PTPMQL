@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PTPMQL\\DemoMvc\\DemoMvc.csproj",
+      "projectUniqueName": "D:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj",
       "projectName": "DemoMvc",
-      "projectPath": "D:\\PTPMQL\\DemoMvc\\DemoMvc.csproj",
+      "projectPath": "D:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj",
       "packagesPath": "C:\\Users\\Win10\\.nuget\\packages\\",
-      "outputPath": "D:\\PTPMQL\\DemoMvc\\obj\\",
+      "outputPath": "D:\\PTPM\\PTPMQL\\DemoMvc\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Win10\\AppData\\Roaming\\NuGet\\NuGet.Config"
