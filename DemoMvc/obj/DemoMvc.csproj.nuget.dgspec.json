@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj": {}
+    "d:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj": {}
   },
   "projects": {
-    "D:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj": {
+    "d:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj",
+        "projectUniqueName": "d:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj",
         "projectName": "DemoMvc",
-        "projectPath": "D:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj",
+        "projectPath": "d:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj",
         "packagesPath": "C:\\Users\\Win10\\.nuget\\packages\\",
-        "outputPath": "D:\\PTPM\\PTPMQL\\DemoMvc\\obj\\",
+        "outputPath": "d:\\PTPM\\PTPMQL\\DemoMvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Win10\\AppData\\Roaming\\NuGet\\NuGet.Config"
