@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj": {}
+    "D:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj": {}
   },
   "projects": {
-    "d:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj": {
+    "D:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj",
+        "projectUniqueName": "D:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj",
         "projectName": "DemoMvc",
-        "projectPath": "d:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj",
+        "projectPath": "D:\\PTPM\\PTPMQL\\DemoMvc\\DemoMvc.csproj",
         "packagesPath": "C:\\Users\\Win10\\.nuget\\packages\\",
-        "outputPath": "d:\\PTPM\\PTPMQL\\DemoMvc\\obj\\",
+        "outputPath": "D:\\PTPM\\PTPMQL\\DemoMvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Win10\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,6 +37,32 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SQLite": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
