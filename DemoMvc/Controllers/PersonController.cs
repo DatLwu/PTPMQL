@@ -19,7 +19,7 @@ namespace DemoMvc.Controllers{
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create ([Bind("PersonID,FullName,Address")] Person person){
+        public async Task<IActionResult> Create ([Bind("PersonID,FullName,Address,PhoneNumber")] Person person){
             if(ModelState.IsValid){
                 _context.Add(person);
                 await _context.SaveChangesAsync();
@@ -42,7 +42,7 @@ namespace DemoMvc.Controllers{
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(String id, [Bind("PersonID,FullName,Address")] Person person){
+        public async Task<IActionResult> Edit(String id, [Bind("PersonID,FullName,Address,PhoneNumber")] Person person){
             if (id !=person.PersonID){
                 return NotFound();
             }
