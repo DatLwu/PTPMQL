@@ -6,5 +6,6 @@ namespace DemoMvc.Models{
         public String NguoiDaiDien { get; set; }
         public String DienThoai { get; set; }
          public String MaHTPP { get; set; }
+         public HeThongPhanPhoi HeThongPhanPhoi {get; set ;}
     }
 }
