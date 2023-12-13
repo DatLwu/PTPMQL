@@ -16,7 +16,10 @@ namespace DemoMvc.Migrations
                 {
                     PersonID = table.Column<string>(type: "TEXT", nullable: false),
                     FullName = table.Column<string>(type: "TEXT", nullable: false),
-                    Address = table.Column<string>(type: "TEXT", nullable: false)
+                    Address = table.Column<string>(type: "TEXT", nullable: false),
+                    Discriminator = table.Column<string>(type: "TEXT", nullable: false),
+                    EmployeeID = table.Column<string>(type: "TEXT", nullable: true),
+                    Age = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {

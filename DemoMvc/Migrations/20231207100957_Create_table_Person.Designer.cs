@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DemoMvc.Migrations
 {
     [DbContext(typeof(ApplicationDbcontext))]
-    [Migration("20231108161341_Add_PhoneNumber")]
-    partial class Add_PhoneNumber
+    [Migration("20231207100957_Create_table_Person")]
+    partial class Create_table_Person
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,17 +28,37 @@ namespace DemoMvc.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("Discriminator")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PhoneNumber")
+                    b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("PersonID");
 
                     b.ToTable("Persons");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Person");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("DemoMvc.Models.Employee", b =>
+                {
+                    b.HasBaseType("DemoMvc.Models.Person");
+
+                    b.Property<int>("Age")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("EmployeeID")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.ToTable("Persons");
+
+                    b.HasDiscriminator().HasValue("Employee");
                 });
 #pragma warning restore 612, 618
         }

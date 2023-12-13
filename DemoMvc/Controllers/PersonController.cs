@@ -1,7 +1,9 @@
 using DemoMvc.Data;
 using DemoMvc.Models;
+using DemoMvc.Models.Process;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml;
 
 namespace DemoMvc.Controllers{
     public class PersonController : Controller
@@ -10,6 +12,7 @@ namespace DemoMvc.Controllers{
         public PersonController(ApplicationDbcontext context){
             _context=context;
         }
+         private ExcelProcess _excelPro = new ExcelProcess();
         public async Task<IActionResult> Index(){
             var model = await _context.Person.ToListAsync();
             return View(model);
@@ -19,7 +22,7 @@ namespace DemoMvc.Controllers{
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create ([Bind("PersonID,FullName,Address,PhoneNumber")] Person person){
+        public async Task<IActionResult> Create ([Bind("PersonID,FullName,Address")] Person person){
             if(ModelState.IsValid){
                 _context.Add(person);
                 await _context.SaveChangesAsync();
@@ -42,7 +45,7 @@ namespace DemoMvc.Controllers{
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(String id, [Bind("PersonID,FullName,Address,PhoneNumber")] Person person){
+        public async Task<IActionResult> Edit(String id, [Bind("PersonID,FullName,Address")] Person person){
             if (id !=person.PersonID){
                 return NotFound();
             }
@@ -91,5 +94,62 @@ namespace DemoMvc.Controllers{
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        [HttpPost]
+        public async Task<IActionResult> Upload(IFormFile file)
+        {
+            if (file!=null)
+                {
+                    string fileExtension = Path.GetExtension(file.FileName);
+                    if (fileExtension != ".xls" && fileExtension != ".xlsx")
+                    {
+                        ModelState.AddModelError("", "Please choose excel file to upload!");
+                    }
+                    else
+                    {
+                        //rename file when upload to server
+                        var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Uploads/Excels", "File" + DateTime.Now.Day + DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Millisecond + fileExtension);
+                        var fileLocation = new FileInfo(filePath).ToString();
+                        if (file.Length > 0)
+                        {
+                            using (var stream = new FileStream(filePath, FileMode.Create))
+                            {
+                                //save file to server
+                                await file.CopyToAsync(stream);
+                                //read data from file and write to database
+                                var dt = _excelPro.ExcelToDataTable(fileLocation);
+                                for(int i = 0; i < dt.Rows.Count; i++)
+                                {
+                                    var ps = new Person();
+                                    ps.PersonID =dt.Rows[i][0].ToString();
+                                    ps.FullName = dt.Rows[i][1].ToString();
+                                    ps.Address = dt.Rows[i][2].ToString();
+
+                                    _context.Add(ps);
+                                }
+                                await _context.SaveChangesAsync();
+                                return RedirectToAction(nameof(Index));
+                            }
+                        }
+                    }
+                }
+            
+            return View();
+        }  
+         public IActionResult Download()
+        {
+            var fileName = "PersonList.xlsx";
+            using(ExcelPackage excelPackage = new ExcelPackage())
+            {
+                ExcelWorksheet excelWorksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");
+                excelWorksheet.Cells["A1"].Value = "PersonID";
+                excelWorksheet.Cells["B1"].Value = "FullName";
+                excelWorksheet.Cells["C1"].Value = "Address";
+                var psList = _context.Person.ToList();
+                excelWorksheet.Cells["A2"].LoadFromCollection(psList);
+                var stream = new MemoryStream(excelPackage.GetAsByteArray());
+                return File(stream,"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",fileName);
+            }
+        }  
     }
+
 }

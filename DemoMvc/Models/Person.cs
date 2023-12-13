@@ -7,6 +7,5 @@ namespace DemoMvc.Models{
         public String PersonID { get; set; }
         public String FullName { get; set; }
         public String Address { get; set; }
-        public String PhoneNumber { get; set; }
     }
 }
